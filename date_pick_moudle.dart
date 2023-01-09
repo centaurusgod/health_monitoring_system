@@ -1,6 +1,9 @@
+//required package to use date formatter 
+//"flutter pub add intl"
+
 //add it before overide in your class
 var todaysDate = DateTime.now();
-
+ 
 //This will open calender to pick up date
   void _showDatePicker() {
     showDatePicker(
