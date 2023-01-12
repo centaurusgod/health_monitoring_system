@@ -33,7 +33,7 @@ class RealTimeGraphRendererState extends State<RealTimeGraphRenderer> {
 //constructor for future use
   RealTimeGraphRendererState();
 
-  final databaseReference = FirebaseDatabase.instance.ref('HEART_MEASURE');
+  final databaseReference = FirebaseDatabase.instance.ref('5166519');
 
   List<FlSpot> heartSpots = List.empty(growable: true);
   late double deviceHeight;
@@ -135,7 +135,7 @@ class RealTimeGraphRendererState extends State<RealTimeGraphRenderer> {
                         GestureDetector(
                           onTap: (() {
                            // startUpdatingData();
-                       
+                       readData();
                            print(heartSpots);
                           }),
                           child: CircleAvatar(
@@ -171,6 +171,7 @@ class RealTimeGraphRendererState extends State<RealTimeGraphRenderer> {
                               // }
 
                               readData();
+
                             } catch (error) {
                               print(error);
                             }
@@ -208,8 +209,8 @@ class RealTimeGraphRendererState extends State<RealTimeGraphRenderer> {
 
                           minX: 0,
                           maxX: 8,
-                          minY: dynamicMinY,
-                          maxY: dynamicMaxY,
+                          minY: 40,
+                          maxY: 120,
                           borderData: FlBorderData(
                               show: true,
                               border: Border(
@@ -245,16 +246,7 @@ class RealTimeGraphRendererState extends State<RealTimeGraphRenderer> {
                               dotData: FlDotData(show: true),
                               barWidth: 2.0,
                               spots: heartSpots,
-                              //[
-                              //   const FlSpot(0, 70),
-                              //   const FlSpot(1, 90),
-                              //   const FlSpot(2, 85),
-                              //   const FlSpot(3, 110),
-                              //   const FlSpot(4, 120),
-                              //   const FlSpot(5, 115),
-                              //   const FlSpot(6, 135),
-                              //   const FlSpot(7, 120),
-                              // ],
+                            
                             ),
                           ],
                           titlesData: FlTitlesData(
@@ -288,13 +280,16 @@ class RealTimeGraphRendererState extends State<RealTimeGraphRenderer> {
   }
 
   void readData() async {
+    print("neeee 1");
     try {
       databaseReference.onValue.listen((DatabaseEvent event) {
-        final data = event.snapshot.value as Map;
+
+        print("neeee 2");
+        Map data = event.snapshot.value as Map;
         if (data != null) {
           print("neeeee");
 
-          status = data['HEART_MEASURE'];
+          status = data['HEART_VALUE'];
           print(status);
 
           // if (status == 1) {
