@@ -132,12 +132,12 @@ var Username=UsernameController.text.trim();
              var password=PasswordController.text.trim();
              try{await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password).then((value) => {
               log("User Created"),
-              FirebaseFirestore.instance.collection("users").doc(currentUser!.uid).set({
+              FirebaseFirestore.instance.collection("users").doc(currentUser?.uid).set({
                 'username':Username,
                 'userphone':phone,
                 'useremail':email,
                 'createdAt':DateTime.now(),
-                'userId':currentUser!.uid,
+                'userId':currentUser?.uid,
               }).then((value) => {
                 Get.to(()=>Homescreen()),
               }),
