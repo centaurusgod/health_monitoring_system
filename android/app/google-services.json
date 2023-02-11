@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "30468016945",
+    "firebase_url": "https://dummytesting-11f29-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "dummytesting-11f29",
+    "storage_bucket": "dummytesting-11f29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30468016945:android:970fca3ded872bd8807e10",
+        "android_client_info": {
+          "package_name": "com.example.live_graph_plotter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30468016945-kt4qvs8bgjhrpurop32br01jjsva4t4a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB315cfxqns_etG6E8GwOzqIReg6JYhDFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "30468016945-kt4qvs8bgjhrpurop32br01jjsva4t4a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
